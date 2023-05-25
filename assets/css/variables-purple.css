@@ -32,9 +32,12 @@
   --color-default: #1a1f24;
   --color-default-rgb: 26, 31, 36;
 
-  /* Defult links color */
+  /* Default links color */
   --color-links: #6261c5;
   --color-links-hover: #7d7bfd;
+
+  /* Text on dark bg color */
+  --color-fat-text-on-dark: #e6e5e0;
 
   /* Primay colors */
   --color-primary: #6261c5;
@@ -52,6 +55,7 @@
 
   --color-secondary-rgb: 86, 85, 107;
   --color-secondary-light-rgb: 124, 123, 148;
+  --color-secondary-extra-light-rgb: 240, 240, 240;
   --color-secondary-dark-rgb: 52, 51, 70;
 
   /* General colors */

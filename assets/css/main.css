@@ -553,13 +553,17 @@ section {
 /*--------------------------------------------------------------
 # Index Page
 --------------------------------------------------------------*/
+.page {
+  background: url("../img/Denoue_bg.png") center top;
+}
+
 /*--------------------------------------------------------------
 # Animated Hero Section
 --------------------------------------------------------------*/
 .hero-animated {
   width: 100%;
   min-height: 50vh;
-  background: url("../img/hero-bg.png") center center;
+  /* background: url("../img/hero-bg.png") center center; */
   background-size: cover;
   position: relative;
   padding: 120px 0 60px;
@@ -1106,6 +1110,16 @@ section {
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
+
+.bg-semi-transparent {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 20%, rgba(255, 255, 255, 0.6) 90%, rgba(255, 255, 255, 0))
+}
+
+.about {
+  margin-top: -60px;
+}
+
 .about .about-img {
   position: relative;
   margin: 60px 0 0 60px;
@@ -1128,6 +1142,10 @@ section {
   .about .about-img:before {
     inset: -30px 0 0 -30px;
   }
+}
+
+.about h2 span {
+  color: var(--color-primary);
 }
 
 .about h3 {
@@ -1217,8 +1235,13 @@ section {
 
 .cta .container {
   padding: 80px;
-  background: rgba(var(--color-secondary-rgb), 0.1);
+  background: rgba(var(--color-secondary-extra-light-rgb), 1);
   border-radius: 15px;
+}
+
+.cta .container span {
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 @media (max-width: 992px) {
@@ -1558,6 +1581,10 @@ section {
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services {
+  margin-top: -60px;
+}
+
 .services .img {
   border-radius: 8px;
   overflow: hidden;
@@ -2272,7 +2299,6 @@ section {
 
 .contact .php-email-form {
   width: 100%;
-  background: var(--color-white);
 }
 
 .contact .php-email-form .form-group {
@@ -3026,12 +3052,13 @@ section {
 }
 
 .footer .footer-content .footer-info h3 {
-  font-size: 28px;
+  font-size: 32px;
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: var(--color-fat-text-on-dark);
+  font-weight: 100;
+  font-family: var(--font-secondary);
 }
 
 .footer .footer-content .footer-info h3 span {
