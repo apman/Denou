@@ -88,6 +88,11 @@ section {
   overflow: hidden;
 }
 
+section.inner-page {
+  padding: 25px 0 60px 0;
+  overflow: hidden;
+}
+
 .section-header {
   text-align: center;
   padding-bottom: 40px;
@@ -555,6 +560,20 @@ section {
 --------------------------------------------------------------*/
 .page {
   background: url("../img/Denoue_bg.png") center top;
+}
+
+.page-header {
+  text-align: center;
+}
+
+.page-header h2 {
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--color-secondary);
+}
+
+.page-header h2 span {
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
