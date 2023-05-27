@@ -57,7 +57,6 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-            <li><a class="nav-link scrollto" href="index.html#why">Why Denoue?</a></li>
             <li><a class="nav-link scrollto" href="index.html#solutions">Solutions</a></li>
             <li><a class="nav-link" href="#">Log in</a></li>
           </ul>
@@ -192,27 +191,55 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
+          <div class="col-lg-5 col-md-6">
+            <div class="footer-info footer-links">
               <h3>Denoue</h3>
-              <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
+
+                <div class="info-item d-flex">
+                  <i class="bi bi-geo-alt flex-shrink-0"></i>
+                  <div>
+                    <h4>Location:</h4>
+                    <p>A108 Adam Street, New York, NY 535022</p>
+                  </div>
+                </div><!-- End Info Item -->
+  
+                <div class="info-item d-flex">
+                  <i class="bi bi-envelope flex-shrink-0"></i>
+                  <div>
+                    <h4>Email:</h4>
+                    <p><a href="mailto:info@denou.ai?subject=[Denou.ai] Add your subject here">info@denoue.ai</a></p>
+                  </div>
+                </div><!-- End Info Item -->
+
+                <div class="info-item d-flex">
+                  <i class="bi bi-phone flex-shrink-0"></i>
+                  <div>
+                    <h4>Call:</h4>
+                    <p>+1 5589 55488 55</p>
+                  </div>
+                </div><!-- End Info Item -->
             </div>
           </div>
 
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="about.html">About us</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="faq.html">FAQ</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="pricing.html">Pricing</a></li>
+            </ul>
 
+          </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <div class="col-lg-4 col-md-12 footer-newsletter footer-links">
             <h4>Interested? </h4>
-            <p>Subscribe to updates</p>
+            <p>Contact us at: <a href="mailto:info@denou.ai?subject=[Denou.ai] Add your subject here">info@denoue.ai</a></p>
+            
+            <label for="email">Or subscribe to updates:</label>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
-
           </div>
 
         </div>
@@ -226,9 +253,9 @@
           <div class="copyright">
             &copy; Copyright <strong><span>Denoue</span></strong> 2023. All Rights Reserved
           </div>
-          
         </div>
 
+        <!-- Social Links 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
           <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
           <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -236,6 +263,7 @@
           <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
           <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
+        -->
 
       </div>
     </div>
