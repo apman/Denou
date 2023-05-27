@@ -3143,19 +3143,19 @@ section.inner-page {
   padding-top: 0;
 }
 
-.footer .footer-content .footer-links ul a {
+.footer .footer-content .footer-links a {
   color: rgba(var(--color-white-rgb), 0.7);
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
-.footer .footer-content .footer-links ul a:hover {
+.footer .footer-content .footer-links a:hover {
   color: var(--color-white);
 }
 
 .footer .footer-content .footer-newsletter form {
-  margin-top: 30px;
+  margin-top: 5px;
   background: var(--color-white);
   padding: 6px 10px;
   position: relative;
