@@ -125,7 +125,7 @@ section.inner-page {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: rgba(var(--color-secondary-rgb), 0.05);
+  background-color: var(--color-secondary-extra-light);
   min-height: 40px;
   margin-top: 76px;
 }
