@@ -125,7 +125,7 @@ section.inner-page {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: rgba(var(--color-secondary-rgb), 0.05);
+  background-color: var(--color-secondary-extra-light);
   min-height: 40px;
   margin-top: 76px;
 }
@@ -241,11 +241,6 @@ section.inner-page {
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
-}
-
-.header .logo h1 span {
-  color: var(--color-primary);
-  font-weight: 500;
 }
 
 .header .btn-getstarted,
@@ -576,10 +571,6 @@ section.inner-page {
   color: var(--color-secondary);
 }
 
-.page-header h2 span {
-  color: var(--color-primary);
-}
-
 /*--------------------------------------------------------------
 # Animated Hero Section
 --------------------------------------------------------------*/
@@ -598,10 +589,6 @@ section.inner-page {
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
-}
-
-.hero-animated h2 span {
-  color: var(--color-primary);
 }
 
 .hero-animated p {
@@ -928,10 +915,6 @@ section.inner-page {
   font-family: var(--font-secondary);
 }
 
-.hero-fullscreen h2 span {
-  color: var(--color-primary);
-}
-
 .hero-fullscreen p {
   color: rgba(var(--color-secondary-rgb), 0.8);
   margin: 0 0 30px 0;
@@ -1014,10 +997,6 @@ section.inner-page {
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
-}
-
-.hero-static h2 span {
-  color: var(--color-primary);
 }
 
 .hero-static p {
@@ -1167,10 +1146,6 @@ section.inner-page {
   }
 }
 
-.about h2 span {
-  color: var(--color-primary);
-}
-
 .about h3 {
   color: var(--color-secondary);
   font-family: var(--font-secondary);
@@ -1260,11 +1235,6 @@ section.inner-page {
   padding: 80px;
   background: rgba(var(--color-secondary-extra-light-rgb), 1);
   border-radius: 15px;
-}
-
-.cta .container span {
-  color: var(--color-primary);
-  font-weight: 500;
 }
 
 @media (max-width: 992px) {
@@ -1605,7 +1575,7 @@ section.inner-page {
 # Services Section
 --------------------------------------------------------------*/
 .services {
-  margin-top: -60px;
+  margin-top: -30px;
 }
 
 .services .img {
@@ -1792,9 +1762,6 @@ section.inner-page {
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
-.pricing {
-  background: rgba(var(--color-secondary-rgb), 0.04);
-}
 
 .pricing .pricing-item {
   padding: 60px 40px;
@@ -3066,7 +3033,7 @@ section.inner-page {
 }
 
 .footer .footer-content {
-  background: var(--color-secondary);
+  background-color: rgba(var(--color-secondary-dark-rgb), 0.8);
   padding: 60px 0 30px 0;
 }
 
@@ -3082,10 +3049,6 @@ section.inner-page {
   color: var(--color-fat-text-on-dark);
   font-weight: 100;
   font-family: var(--font-secondary);
-}
-
-.footer .footer-content .footer-info h3 span {
-  color: var(--color-primary);
 }
 
 .footer .footer-content .footer-info p {
@@ -3116,6 +3079,29 @@ section.inner-page {
   left: 0;
 }
 
+.footer .info-item+.info-item {
+  width: 300px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--color-secondary-light);
+}
+
+.footer .info-item i {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.footer .info-item h4 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.footer .footer-content .info-item h4::after {
+  display: none;
+}
+
 .footer .footer-content .footer-links {
   margin-bottom: 30px;
 }
@@ -3143,19 +3129,19 @@ section.inner-page {
   padding-top: 0;
 }
 
-.footer .footer-content .footer-links ul a {
+.footer .footer-content .footer-links a {
   color: rgba(var(--color-white-rgb), 0.7);
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
 }
 
-.footer .footer-content .footer-links ul a:hover {
+.footer .footer-content .footer-links a:hover {
   color: var(--color-white);
 }
 
 .footer .footer-content .footer-newsletter form {
-  margin-top: 30px;
+  margin-top: 5px;
   background: var(--color-white);
   padding: 6px 10px;
   position: relative;
