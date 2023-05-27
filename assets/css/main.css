@@ -3066,7 +3066,7 @@ section.inner-page {
 }
 
 .footer .footer-content {
-  background: var(--color-secondary);
+  background-color: rgba(var(--color-secondary-dark-rgb), 0.8);
   padding: 60px 0 30px 0;
 }
 
@@ -3114,6 +3114,29 @@ section.inner-page {
   background: var(--color-primary);
   bottom: 0;
   left: 0;
+}
+
+.footer .info-item+.info-item {
+  width: 300px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--color-secondary-light);
+}
+
+.footer .info-item i {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.footer .info-item h4 {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.footer .footer-content .info-item h4::after {
+  display: none;
 }
 
 .footer .footer-content .footer-links {
