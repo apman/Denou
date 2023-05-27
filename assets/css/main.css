@@ -243,11 +243,6 @@ section.inner-page {
   font-family: var(--font-secondary);
 }
 
-.header .logo h1 span {
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   font-size: 16px;
@@ -576,10 +571,6 @@ section.inner-page {
   color: var(--color-secondary);
 }
 
-.page-header h2 span {
-  color: var(--color-primary);
-}
-
 /*--------------------------------------------------------------
 # Animated Hero Section
 --------------------------------------------------------------*/
@@ -598,10 +589,6 @@ section.inner-page {
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
-}
-
-.hero-animated h2 span {
-  color: var(--color-primary);
 }
 
 .hero-animated p {
@@ -928,10 +915,6 @@ section.inner-page {
   font-family: var(--font-secondary);
 }
 
-.hero-fullscreen h2 span {
-  color: var(--color-primary);
-}
-
 .hero-fullscreen p {
   color: rgba(var(--color-secondary-rgb), 0.8);
   margin: 0 0 30px 0;
@@ -1014,10 +997,6 @@ section.inner-page {
   font-weight: 300;
   color: var(--color-secondary);
   font-family: var(--font-secondary);
-}
-
-.hero-static h2 span {
-  color: var(--color-primary);
 }
 
 .hero-static p {
@@ -1167,10 +1146,6 @@ section.inner-page {
   }
 }
 
-.about h2 span {
-  color: var(--color-primary);
-}
-
 .about h3 {
   color: var(--color-secondary);
   font-family: var(--font-secondary);
@@ -1260,11 +1235,6 @@ section.inner-page {
   padding: 80px;
   background: rgba(var(--color-secondary-extra-light-rgb), 1);
   border-radius: 15px;
-}
-
-.cta .container span {
-  color: var(--color-primary);
-  font-weight: 500;
 }
 
 @media (max-width: 992px) {
@@ -3079,10 +3049,6 @@ section.inner-page {
   color: var(--color-fat-text-on-dark);
   font-weight: 100;
   font-family: var(--font-secondary);
-}
-
-.footer .footer-content .footer-info h3 span {
-  color: var(--color-primary);
 }
 
 .footer .footer-content .footer-info p {
