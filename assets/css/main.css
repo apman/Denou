@@ -1792,9 +1792,6 @@ section.inner-page {
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
-.pricing {
-  background: rgba(var(--color-secondary-rgb), 0.04);
-}
 
 .pricing .pricing-item {
   padding: 60px 40px;
