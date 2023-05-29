@@ -1245,8 +1245,8 @@ section.inner-page {
 
 .cta .content h3 {
   color: var(--color-secondary);
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 300;
 }
 
 .cta .content h3 em {
@@ -1267,7 +1267,6 @@ section.inner-page {
 
 .cta .content p {
   color: var(--color-secondary);
-  font-weight: 600;
   font-size: 18px;
 }
 
