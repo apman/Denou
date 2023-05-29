@@ -88,7 +88,8 @@ span.DenoueTM {
 # Sections & Section Header
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 100px 0 20px 0;
+  margin-top: -60px;
   overflow: hidden;
 }
 
@@ -580,7 +581,7 @@ section.inner-page {
   /* background: url("../img/hero-bg.png") center center; */
   background-size: cover;
   position: relative;
-  padding: 120px 0 60px;
+  padding: 150px 0 60px;
 }
 
 .hero-animated h2 {
@@ -1227,7 +1228,7 @@ section.inner-page {
 # Call To Action Section
 --------------------------------------------------------------*/
 .cta {
-  padding: 0;
+  /* padding: 0; */
   margin-bottom: 60px;
 }
 
@@ -1245,8 +1246,8 @@ section.inner-page {
 
 .cta .content h3 {
   color: var(--color-secondary);
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 38px;
+  font-weight: 300;
 }
 
 .cta .content h3 em {
@@ -1267,7 +1268,6 @@ section.inner-page {
 
 .cta .content p {
   color: var(--color-secondary);
-  font-weight: 600;
   font-size: 18px;
 }
 
@@ -1575,7 +1575,7 @@ section.inner-page {
 # Services Section
 --------------------------------------------------------------*/
 .services {
-  margin-top: -30px;
+  margin-top: -60px;
 }
 
 .services .img {
