@@ -240,7 +240,7 @@ section.inner-page {
 .header .logo h1 {
   font-size: 32px;
   font-weight: 300;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   font-family: var(--font-secondary);
 }
 
