@@ -95,6 +95,7 @@ section {
 
 section.inner-page {
   padding: 25px 0 60px 0;
+  margin-top: 0;
   overflow: hidden;
 }
 
@@ -1121,11 +1122,25 @@ section.inner-page {
 
 .about {
   margin-top: -60px;
+  color: var(--color-secondary-light);
+  font-size: 18px;
 }
 
 .about .about-img {
   position: relative;
   margin: 60px 0 0 60px;
+}
+
+.about li {
+  margin-bottom: 10px;
+}
+
+.about i {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 0;
+  margin-right: 8px;
+  color: var(--color-primary);
 }
 
 .about .about-img:before {
