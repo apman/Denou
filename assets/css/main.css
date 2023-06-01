@@ -2361,7 +2361,7 @@ section.inner-page {
 .contact .email-form textarea {
   border-radius: 0px;
   box-shadow: none;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .contact .email-form input[type=text]:focus,
@@ -2372,8 +2372,8 @@ section.inner-page {
 
 .contact .email-form input[type=text],
 .contact .email-form input[type=email] {
-  height: 48px;
-  padding: 10px 15px;
+  height: 44px;
+  padding: 8px 15px;
 }
 
 .contact .email-form textarea {
@@ -2397,6 +2397,15 @@ section.inner-page {
 
 .contact .email-form button[type=submit]:hover:enabled {
   background: rgba(var(--color-primary-rgb), 0.85);
+}
+
+.contact select.form-select {
+  color: #212529;
+  font-size: ;
+}
+
+.contact select.form-select:invalid {
+  color: var(--color-secondary-light);
 }
 
 @keyframes animate-loading {
