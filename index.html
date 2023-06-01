@@ -59,22 +59,22 @@
           ERROR: 'error'
       }
 
-      const showFormFeedback = (type, message) => {
-          const messageField = document.getElementById('form-feedback');
+      const showFormFeedback = (feedbackField, type, message) => {
+          const messageField = document.getElementById(feedbackField);
           messageField.classList.remove(...messageField.classList);
           messageField.classList.add('d-block');
           messageField.classList.add(type);
           messageField.innerHTML = message;
       }
 
-      const hideFormFeedback = () => {
-          const messageField = document.getElementById('form-feedback');
+      const hideFormFeedback = (feedbackField) => {
+          const messageField = document.getElementById(feedbackField);
           messageField.classList.remove(...messageField.classList);
           messageField.classList.add('d-none');
       }
 
-      const resetForm = () => {
-          const form = document.getElementById('template_d9i590w');
+      const resetForm = (formID) => {
+          const form = document.getElementById(formID);
           form.reset();
       }
 
@@ -83,7 +83,7 @@
           return re.test(email);
       }
       
-      const validateForm = () => {
+      const validateContactForm = () => {
         const form = document.getElementById('template_d9i590w');
         const submitButton = form.querySelector('button[type="submit"]');
         const email = form.querySelector('input[name="reply_to"]');
@@ -91,11 +91,11 @@
         const subject = form.querySelector('input[name="subject"]');
 
         submitButton.disabled = true;
-        hideFormFeedback();
+        hideFormFeedback('form-feedback');
         
         if (email.value) {
           if (!isValidEmail(email.value)) {
-              showFormFeedback(enumFeedbackType.ERROR, 'Please check the email address you entered.');
+              showFormFeedback('form-feedback',enumFeedbackType.ERROR, 'Please check the email address you entered.');
           } else {
             if (name.value && subject.value) {
                   submitButton.disabled = false;
@@ -105,19 +105,37 @@
       }
 
       window.onload = function() {
-          // document.getElementById('template_uawlewg').addEventListener('submit', function(event) {
+          // Contact-form listener
           document.getElementById('template_d9i590w').addEventListener('submit', function(event) {
               event.preventDefault();
               // service id from https://dashboard.emailjs.com/admin and 
               // template id from https://dashboard.emailjs.com/admin/templates/
-              // emailjs.sendForm('service_nk262ta', 'template_uawlewg', this)
               emailjs.sendForm('service_tehd139', 'template_d9i590w', this)
                   .then(function() {
-                      showFormFeedback(enumFeedbackType.SUCCESS, 'Your message has been sent. Thank you!');
-                      resetForm();
+                      showFormFeedback('form-feedback', enumFeedbackType.SUCCESS, 'Your message has been sent. Thank you!');
+                      resetForm('template_d9i590w');
                   }, function(error) {
-                      showFormFeedback(enumFeedbackType.ERROR, 'Sorry, something went wrong. Please email us at <a href="mailto:info@denou.ai?subject=[Denou.ai Contact form not working]">info@denoue.ai</a>.');
+                      showFormFeedback('form-feedback', enumFeedbackType.ERROR, 'Sorry, something went wrong. Please email us at <a href="mailto:info@denou.ai?subject=[Denou.ai Contact form not working]">info@denoue.ai</a>.');
                   });
+          });
+
+          // Subscribe-form listener
+          document.getElementById('template_8xblabv').addEventListener('submit', function(event) {
+              event.preventDefault();
+              hideFormFeedback('subscribe-feedback');
+              const form = document.getElementById('template_8xblabv');
+              const email = form.querySelector('input[name="user_email"]');
+              if (isValidEmail(email.value))  {
+                // service id from https://dashboard.emailjs.com/admin and 
+                // template id from https://dashboard.emailjs.com/admin/templates/
+                emailjs.sendForm('service_tehd139', 'template_8xblabv', this)
+                    .then(function() {
+                        showFormFeedback('subscribe-feedback', enumFeedbackType.SUCCESS, 'Thank you!');
+                        resetForm('template_8xblabv');
+                    }, function(error) {
+                        showFormFeedback('subscribe-feedback', enumFeedbackType.ERROR, 'Sorry, something went wrong. Please email us at <a href="mailto:info@denou.ai?subject=[Denou.ai Contact form not working]">info@denoue.ai</a>.');
+                    });
+              }
           });
       }
   </script>
@@ -365,10 +383,10 @@
               <input type="hidden" name="contact_number">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="from_name" class="form-control" id="name" placeholder="Your Name" onchange="validateForm()">
+                  <input type="text" name="from_name" class="form-control" id="name" placeholder="Your Name" onchange="validateContactForm()">
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="reply_to" id="email" placeholder="Your Email" onchange="validateForm()">
+                  <input type="email" class="form-control" name="reply_to" id="email" placeholder="Your Email" onchange="validateContactForm()">
                 </div>
               </div>
               <div class="form-group mt-3">
@@ -382,10 +400,10 @@
                 </select>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" onchange="validateForm()">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" onchange="validateContactForm()">
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Message" onchange="validateForm()"></textarea>
+                <textarea class="form-control" name="message" placeholder="Message" onchange="validateContactForm()"></textarea>
               </div>
               <div class="feedback">
                 <div id="form-feedback" class="d-none"></div>
@@ -444,11 +462,14 @@
             <p>Contact us at: <a href="mailto:info@denou.ai?subject=[Denou.ai] Add your subject here">info@denoue.ai</a></p>
             
             <label for="email">Or subscribe to updates:</label>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
+            <form id="template_8xblabv">
+              <input type="email" name="user_email"><input type="submit" value="Subscribe">
 
+            </form>
+            <div class="feedback">
+              <div id="subscribe-feedback" class="d-none"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
