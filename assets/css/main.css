@@ -533,8 +533,10 @@ section.inner-page {
     right: 20px;
   }
 
+  /* Extending the touch target of the close button to cover the whole right side of the screen */
   .mobile-nav-toggle.bi-x {
-    color: var(--color-white);
+    margin: -20px -20px 0 0;
+    padding: 20px 20px 2000px 60px;
   }
 
   .mobile-nav-active {
@@ -551,7 +553,7 @@ section.inner-page {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(var(--color-secondary-rgb), 0.8);
+    background: rgba(var(--color-secondary-rgb), 0.2);
     z-index: 9996;
   }
 }
