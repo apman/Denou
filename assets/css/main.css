@@ -2258,6 +2258,7 @@ section.inner-page {
 }
 
 .contact .info {
+  background-color: white;
   padding: 40px;
   box-shadow: 0px 2px 15px rgba(var(--color-black-rgb), 0.1);
   overflow: hidden;
