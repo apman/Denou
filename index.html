@@ -44,6 +44,83 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+      (function() {
+          // Public key from https://dashboard.emailjs.com/admin/account
+          // emailjs.init('7bD7zB8-jdDqT5FHX'); // Anna
+          emailjs.init('2PVoeNg_pXjhfR4g9'); // Del
+      })();
+  </script>
+  <script type="text/javascript">
+      const enumFeedbackType = {
+          SUCCESS: 'success',
+          ERROR: 'error'
+      }
+
+      const showFormFeedback = (type, message) => {
+          const messageField = document.getElementById('form-feedback');
+          messageField.classList.remove(...messageField.classList);
+          messageField.classList.add('d-block');
+          messageField.classList.add(type);
+          messageField.innerHTML = message;
+      }
+
+      const hideFormFeedback = () => {
+          const messageField = document.getElementById('form-feedback');
+          messageField.classList.remove(...messageField.classList);
+          messageField.classList.add('d-none');
+      }
+
+      const resetForm = () => {
+          const form = document.getElementById('template_d9i590w');
+          form.reset();
+      }
+
+      const isValidEmail = (email) => {
+          const re = /\S+@\S+\.\S+/;
+          return re.test(email);
+      }
+      
+      const validateForm = () => {
+        const form = document.getElementById('template_d9i590w');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const email = form.querySelector('input[name="reply_to"]');
+        const name = form.querySelector('input[name="from_name"]');
+        const subject = form.querySelector('input[name="subject"]');
+
+        submitButton.disabled = true;
+        hideFormFeedback();
+        
+        if (email.value) {
+          if (!isValidEmail(email.value)) {
+              showFormFeedback(enumFeedbackType.ERROR, 'Please check the email address you entered.');
+          } else {
+            if (name.value && subject.value) {
+                  submitButton.disabled = false;
+              } 
+          }
+        } 
+      }
+
+      window.onload = function() {
+          // document.getElementById('template_uawlewg').addEventListener('submit', function(event) {
+          document.getElementById('template_d9i590w').addEventListener('submit', function(event) {
+              event.preventDefault();
+              // service id from https://dashboard.emailjs.com/admin and 
+              // template id from https://dashboard.emailjs.com/admin/templates/
+              // emailjs.sendForm('service_nk262ta', 'template_uawlewg', this)
+              emailjs.sendForm('service_tehd139', 'template_d9i590w', this)
+                  .then(function() {
+                      showFormFeedback(enumFeedbackType.SUCCESS, 'Your message has been sent. Thank you!');
+                      resetForm();
+                  }, function(error) {
+                      showFormFeedback(enumFeedbackType.ERROR, 'Sorry, something went wrong. Please email us at <a href="mailto:info@denou.ai?subject=[Denou.ai Contact form not working]">info@denoue.ai</a>.');
+                  });
+          });
+      }
+  </script>
 </head>
 
 <body class="page">
@@ -233,6 +310,84 @@
       </div>
     </section><!-- End Call To Action Section -->
 
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+        </div>
+
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-4">
+
+            <div class="info">
+              <h3>Get in touch</h3>
+              <p>Et id eius voluptates atque nihil voluptatem enim in tempore minima sit ad mollitia commodi minus.</p>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Location:</h4>
+                  <p>A108 Adam Street, New York, NY 535022</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>info@example.com</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Call:</h4>
+                  <p>+1 5589 55488 55</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <!-- <form id="template_uawlewg" role="form" class="email-form"> -->
+            <form id="template_d9i590w" role="form" class="email-form">
+              <input type="hidden" name="contact_number">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="from_name" class="form-control" id="name" placeholder="Your Name" onchange="validateForm()">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="reply_to" id="email" placeholder="Your Email" onchange="validateForm()">
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" onchange="validateForm()">
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" placeholder="Message" onchange="validateForm()"></textarea>
+              </div>
+              <div class="feedback">
+                <div id="form-feedback" class="d-none"></div>
+              </div>
+              <div class="text-center"><button type="submit" disabled>Send Message</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -322,7 +477,6 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
